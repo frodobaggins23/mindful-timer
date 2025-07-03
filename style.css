@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3a3a3a 0%, #cd7f32 50%, #3a3a3a 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.timer-section {
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 4em;
+    font-weight: bold;
+    color: #4a5568;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #cd7f32, #b8691e);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+    background: #e8e8e8;
+    color: #3a3a3a;
+}
+
+.btn-secondary:hover {
+    background: #d4d4d4;
+}
+
+.diary-section h2 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.today-entries {
+    margin-bottom: 30px;
+}
+
+.today-entries h3 {
+    color: #cd7f32;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.entry-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.entry-input input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.entry-input input:focus {
+    outline: none;
+    border-color: #cd7f32;
+}
+
+.entry-input button {
+    padding: 12px 20px;
+    background: #cd7f32;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.entry-input button:hover {
+    background: #b8691e;
+}
+
+.diary-entries {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.date-group {
+    margin-bottom: 25px;
+}
+
+.date-header {
+    background: #f7fafc;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+.entry-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #cd7f32;
+}
+
+.entry-time {
+    font-size: 0.9em;
+    color: #718096;
+    margin-bottom: 5px;
+}
+
+.entry-feeling {
+    color: #4a5568;
+    font-size: 1.1em;
+}
+
+.progress-indicator {
+    text-align: center;
+    margin-top: 10px;
+    color: #718096;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .timer-display {
+        font-size: 3em;
+    }
+    
+    .timer-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .entry-input {
+        flex-direction: column;
+    }
+}

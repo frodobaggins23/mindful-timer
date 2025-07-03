@@ -1,0 +1,26 @@
+{
+  "name": "mindfulness-meditation-timer",
+  "version": "1.0.0",
+  "description": "A mindful meditation timer with diary functionality",
+  "main": "index.html",
+  "scripts": {
+    "dev": "serve . -l 3000",
+    "start": "serve . -l 3000",
+    "build": "echo 'No build step needed for static app'",
+    "preview": "serve . -l 4173"
+  },
+  "keywords": [
+    "meditation",
+    "mindfulness",
+    "timer",
+    "wellness"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

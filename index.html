@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Meditation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧘‍♀️ Mindfulness Meditations!!</h1>
+            <p>Find your inner peace, one breath at a time</p>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="card">
+            <div class="timer-section">
+                <h2>3-Minute Meditation Timer</h2>
+                <div class="timer-display" id="timerDisplay">03:00</div>
+                <div class="timer-controls">
+                    <button class="btn btn-primary" id="startBtn">Start</button>
+                    <button class="btn btn-secondary" id="pauseBtn">Pause</button>
+                    <button class="btn btn-secondary" id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diary Section -->
+        <div class="card">
+            <div class="diary-section">
+                <h2>📔 Meditation Diary</h2>
+                
+                <div class="today-entries">
+                    <h3>Today's Feelings</h3>
+                    <div id="todayInputs"></div>
+                    <div class="progress-indicator">
+                        <span id="progressText">0/3 entries completed today</span>
+                    </div>
+                </div>
+
+                <div class="diary-entries">
+                    <h3>Previous Entries</h3>
+                    <div id="diaryEntries"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
