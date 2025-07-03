@@ -91,10 +91,42 @@ body {
     background: #d4d4d4;
 }
 
+.btn-danger {
+    background: #8b4a47;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #6b3735;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(139, 74, 71, 0.3);
+}
+
+.diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .diary-section h2 {
     color: #4a5568;
-    margin-bottom: 20px;
+    margin: 0;
     font-size: 1.8em;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background-color: rgba(205, 127, 50, 0.1);
 }
 
 .today-entries {
@@ -141,6 +173,22 @@ body {
 
 .entry-input button:hover {
     background: #b8691e;
+}
+
+.clear-btn {
+    background: #8b4a47 !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    margin-left: 5px !important;
+    border-radius: 6px !important;
+    font-size: 0.9em !important;
+    transition: all 0.3s ease !important;
+}
+
+.clear-btn:hover {
+    background: #6b3735 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 3px 10px rgba(139, 74, 71, 0.3) !important;
 }
 
 .diary-entries {

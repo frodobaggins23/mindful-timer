@@ -4,6 +4,7 @@ class MindfulnessApp {
         this.timeRemaining = this.timerDuration;
         this.timerInterval = null;
         this.isRunning = false;
+        this.isEditMode = false;
         
         this.diaryEntries = this.loadDiaryEntries();
         
@@ -114,6 +115,9 @@ class MindfulnessApp {
     }
 
     initDiary() {
+        this.editBtn = document.getElementById('editBtn');
+        this.editBtn.addEventListener('click', () => this.toggleEditMode());
+        
         this.createTodayInputs();
         this.renderDiaryEntries();
         this.updateProgress();
@@ -121,6 +125,7 @@ class MindfulnessApp {
 
     createTodayInputs() {
         const container = document.getElementById('todayInputs');
+        container.innerHTML = '';
         const today = new Date().toDateString();
         const todayEntries = this.diaryEntries.filter(entry => 
             new Date(entry.timestamp).toDateString() === today
@@ -147,8 +152,23 @@ class MindfulnessApp {
             button.disabled = todayEntries[i] ? true : false;
             button.addEventListener('click', () => this.saveFeelingEntry(i));
             
+            // Hide save buttons in edit mode
+            if (this.isEditMode) {
+                button.style.display = 'none';
+            }
+            
             inputDiv.appendChild(input);
             inputDiv.appendChild(button);
+            
+            // Add clear button in edit mode
+            if (this.isEditMode && todayEntries[i]) {
+                const clearBtn = document.createElement('button');
+                clearBtn.textContent = '🗑️';
+                clearBtn.className = 'clear-btn';
+                clearBtn.addEventListener('click', () => this.clearFeelingEntry(i));
+                inputDiv.appendChild(clearBtn);
+            }
+            
             container.appendChild(inputDiv);
         }
     }
@@ -251,6 +271,35 @@ class MindfulnessApp {
             localStorage.setItem('mindfulnessDiary', JSON.stringify(this.diaryEntries));
         } catch (error) {
             console.error('Failed to save diary entries:', error);
+        }
+    }
+
+    toggleEditMode() {
+        this.isEditMode = !this.isEditMode;
+        this.editBtn.textContent = this.isEditMode ? '✓' : '✏️';
+        this.createTodayInputs();
+    }
+
+    clearFeelingEntry(index) {
+        const today = new Date().toDateString();
+        const todayEntries = this.diaryEntries.filter(entry => 
+            new Date(entry.timestamp).toDateString() === today
+        );
+        
+        if (todayEntries[index]) {
+            // Remove the entry from the array
+            const entryToRemove = todayEntries[index];
+            const entryIndex = this.diaryEntries.findIndex(entry => 
+                entry.timestamp === entryToRemove.timestamp
+            );
+            
+            if (entryIndex > -1) {
+                this.diaryEntries.splice(entryIndex, 1);
+                this.saveDiaryEntries();
+                this.createTodayInputs();
+                this.renderDiaryEntries();
+                this.updateProgress();
+            }
         }
     }
 }
