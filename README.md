@@ -61,11 +61,11 @@ The table below tracks the iterative development process, demonstrating the effi
 |-----------|------------------|-------------------|-----------------|
 | 1 | Idea and first app preview (made in Claude web Ui) | 10 | 10 |
 | 2 | Initial app setup and file separation | 50 | 60 |
-| 3 | Deployment to Vercel | - | - |
+| 3 | Deployment to Vercel | 15 | 75 |
 | 4 |  | - | - |
 | 5 |  | - | - |
 
-**Total Development Time: 60 minutes**
+**Total Development Time: 75 minutes**
 
 
 ---
